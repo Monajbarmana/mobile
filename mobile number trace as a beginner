@@ -1,0 +1,15 @@
+import phonenumbers
+from phonenumbers import geocoder, carrier
+
+# Example phone number (replace with any phone number with country code)
+phone_number = phonenumbers.parse("enter mobile number")  # Example US number
+
+# Get the country/region of the phone number
+location = geocoder.description_for_number(phone_number, "en")
+print(f"Location: {location}")
+
+# Get the carrier (telecom operator) of the phone number
+service_provider = carrier.name_for_number(phone_number, "en")
+print(f"Carrier: {service_provider}")
+
+
